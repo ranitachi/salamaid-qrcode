@@ -8,7 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet"> 
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -66,16 +67,30 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="row">
-                <div class="col-md-6">
-                    @if ($konten->file)
-                        <img src="{{ url('show-image/'.$konten->file) }}" style="width:100%">
-                    @endif
-                </div>
-                <div class="col-md-6">
-                    @if ($konten->konten)
-                        {!! $konten->konten !!}
-                    @endif
-                </div>
+                @if ($konten)
+                    <div class="col-md-6">
+                        @if ($konten->file)
+                            <img src="{{ url('show-image/'.$konten->file) }}" style="width:100%">
+                        @endif
+                    </div>
+                    <div class="col-md-6">
+                        @if ($konten->konten)
+                            {!! $konten->konten !!}
+                        @endif
+                    </div>
+                @else
+                    <div class="text-center" style="text-align:center">
+                        <img src="{{ URL::asset('jsan-salamaid.png') }}">
+                        <div class="col-md-12">
+                                <div class="alert alert-info">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                                    <h1>Info Tidak Di temukan</h1>
+                                </div>
+                            </div>
+                        
+                    </div>
+                @endif
+                
                 
             </div>
         </div>
