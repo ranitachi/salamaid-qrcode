@@ -10,9 +10,10 @@ use App\Http\Controllers\Controller;
 
 class KontenWebController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $konten = KontenWeb::orderBy('created_at','desc')->paginate(10);
-        return view('konten.index',compact('konten'));
+        $page = isset($request->page) ? $request->page : 1;
+        return view('konten.index',compact('konten','page'));
     }
 
     public function create()

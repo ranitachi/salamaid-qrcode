@@ -33,9 +33,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                if($no==1)
+                                    $hal = 1;
+                                else
+                                    $hal =  10 * $no - 9;
+                            @endphp
                             @foreach ($konten as $no => $item)
                                 <tr>
-                                    <td class="text-center">{{ $no+1 }}</td>
+                                    <td class="text-center">{{ $hal }}</td>
                                     <td class="text-left">{{ $item->judul }}</td>
                                     <td class="text-left">{{ date('d F Y',strtotime($item->created_at)) }}</td>
                                     <td class="text-center">
@@ -50,9 +56,15 @@
                                         <a href="javascript:hapus({{ $item->id }})" class="btn btn-xs btn-danger">Hapus</a>
                                     </td>
                                 </tr>
+                                @php
+                                    $hal++;
+                                @endphp
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="text-center">
+                        {{ $konten->links() }}
+                    </div>
                 </div>
             </div>
         </div>
