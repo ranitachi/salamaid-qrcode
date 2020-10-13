@@ -65,15 +65,22 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="position-ref full-height">
             <div class="row">
                 @if ($konten)
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
+                        @php
+                            list($name,$ext)=explode('.',$konten->file);
+                        @endphp
                         @if ($konten->file)
-                            <img src="{{ url('show-image/'.$konten->file) }}" style="width:100%">
+                            @if ($ext=='pdf')
+                                <embed src="{{ url('show-image/'.$konten->file) }}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="900px" style="width:100%"/>        
+                            @else
+                                <img src="{{ url('show-image/'.$konten->file) }}" style="width:100%">
+                            @endif
                         @endif
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         @if ($konten->konten)
                             {!! $konten->konten !!}
                         @endif

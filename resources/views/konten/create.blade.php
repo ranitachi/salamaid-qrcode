@@ -50,10 +50,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-3 col-form-label text-md-right">File Gambar (png,jpg)</label>
+                                    <label for="password" class="col-md-3 col-form-label text-md-right">File Gambar (png,jpg,pdf)</label>
         
                                     <div class="col-md-9">
-                                        <input id="" type="file" class="form-control @error('file') is-invalid @enderror" name="file" accept=".jpg,.png,.jpeg">
+                                        <input id="" type="file" class="form-control @error('file') is-invalid @enderror" name="file" accept=".jpg,.png,.jpeg,.pdf">
         
                                         @error('file')
                                             <span class="invalid-feedback" role="alert">
