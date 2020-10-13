@@ -31,3 +31,5 @@ Auth::routes([
     'register' => false,
     'reset' => false
 ]);
+
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
