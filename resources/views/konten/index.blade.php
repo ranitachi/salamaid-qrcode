@@ -37,7 +37,7 @@
                                 if($no==1)
                                     $hal = 1;
                                 else
-                                    $hal =  10 * $no - 9;
+                                    $hal =  10 * $page - 9;
                             @endphp
                             @foreach ($konten as $no => $item)
                                 <tr>
