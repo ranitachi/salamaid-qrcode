@@ -34,7 +34,7 @@
                         </thead>
                         <tbody>
                             @php
-                                if($no==1)
+                                if($page==1)
                                     $hal = 1;
                                 else
                                     $hal =  10 * $page - 9;
