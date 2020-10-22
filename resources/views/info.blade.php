@@ -76,7 +76,7 @@
                             @if ($ext=='pdf')
                                 {{-- <iframe src="{{ url('show-image/'.$konten->file) }}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="900px" style="width:100%"></iframe>         --}}
                                 {{-- <iframe src ="{{ asset('/laraview/#../'. $konten->file.'') }}" width="1000px" height="600px"></iframe> --}}
-                                <iframe src="https://docs.google.com/viewer?url={{ url('show-image/'.$konten->file) }}&embedded=true" width="100%" height="700px" style="width: 100%; height: 700px;" frameborder="0" scrolling="no"></iframe>
+                                <iframe src="https://docs.google.com/viewer?url={{ url('show-image/'.$konten->file) }}&embedded=true" width="100%" height="900px" style="width: 100%; height: 900px;" frameborder="0" scrolling="no"></iframe>
                             @else
                                 <img src="{{ url('show-image/'.$konten->file) }}" style="width:100%">
                             @endif
