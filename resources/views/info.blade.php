@@ -74,7 +74,8 @@
                         @endphp
                         @if ($konten->file)
                             @if ($ext=='pdf')
-                                <embed src="{{ url('show-image/'.$konten->file) }}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="900px" style="width:100%"/>        
+                                <iframe src="{{ url('show-image/'.$konten->file) }}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="900px" style="width:100%"></iframe>        
+                                {{-- <iframe src ="{{ asset('/laraview/#../'. $konten->file.'') }}" width="1000px" height="600px"></iframe> --}}
                             @else
                                 <img src="{{ url('show-image/'.$konten->file) }}" style="width:100%">
                             @endif

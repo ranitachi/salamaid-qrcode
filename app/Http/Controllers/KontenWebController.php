@@ -37,7 +37,9 @@ class KontenWebController extends Controller
             {
                 $get = $request->file;
                 $name = time().'.'.$get->getClientOriginalExtension();
-                $filename = $get->storeAs('konten',$name);
+                $get->storeAs('konten',$name);
+
+                // $filename = 'konten/'.$name;
             }
 
             $konten = new KontenWeb;
